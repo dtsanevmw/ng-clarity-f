@@ -42,7 +42,7 @@ jobs:
           run-id: ${{github.event.workflow_run.id}}
           github-token: ${{ github.token }}
       - name: Deploy Docs Preview
-        if: ${{steps.download-docs.outputs.found-artifact == 'true'}}
+        if: ${{ hashFiles('dist/docs/**') != '' }}
         timeout-minutes: 5
         env:
           NETLIFY_AUTH_TOKEN: ${{secrets.NETLIFY_AUTH_TOKEN}}
