@@ -28,7 +28,7 @@ for (const story of stories) {
   const component = story.kind.split('/')[0];
   const storyId = story.id;
   const componentParsed = component.replaceAll(' ', '-').replaceAll('/', '-').toLowerCase();
-  if (!componentParsed.includes('combobox') {
+  if (!componentParsed.includes('combobox')) {
     return;
   }
   const storyName = storyId.replace(`${componentParsed}-`, '');
