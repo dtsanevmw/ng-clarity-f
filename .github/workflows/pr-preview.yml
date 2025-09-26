@@ -8,6 +8,7 @@ permissions:
   actions: read
 jobs:
   pr-preview:
+    name: PR Preview
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
