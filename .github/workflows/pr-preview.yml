@@ -37,13 +37,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
-      - name: Download docs artifact from triggering run
-        uses: actions/download-artifact@v4
-        with:
-          name: docs
-          run-id: ${{ github.event.workflow_run.id }}
-          path: dist/docs
-      - run: ls -la dist/docs
       - name: Download Docs Artifact
         id: download-docs
         uses: actions/download-artifact@v4
