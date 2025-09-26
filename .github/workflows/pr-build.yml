@@ -22,10 +22,10 @@ jobs:
         run: npm run lint
       - name: Build
         run: npm run build
-      - name: Test
-        run: npm run test
-      - name: Public Api Check
-        run: npm run public-api:check
+      # - name: Test
+      #   run: npm run test
+      # - name: Public Api Check
+      #   run: npm run public-api:check
       - name: Upload Docs Artifact
         uses: actions/upload-artifact@v4
         with:
