@@ -37,6 +37,20 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
+      - name: Debug – list artifacts on triggering run
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const runId = context.payload.workflow_run.id;
+            const res = await github.rest.actions.listWorkflowRunArtifacts({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: runId,
+              per_page: 100,
+            });
+            core.info(`Artifacts on run ${runId}:`);
+            for (const a of res.data.artifacts) {
+              core.info(`- ${a.name} (id: ${a.id}) expired=${a.expired} size=${a.size_in_bytes}`);}
       - name: Download Docs Artifact
         id: download-docs
         uses: actions/download-artifact@v4
