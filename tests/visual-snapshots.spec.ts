@@ -29,7 +29,7 @@ for (const story of stories) {
   const storyId = story.id;
   const componentParsed = component.replaceAll(' ', '-').replaceAll('/', '-').toLowerCase();
   if (!componentParsed.includes('combobox')) {
-    return;
+    continue;
   }
   const storyName = storyId.replace(`${componentParsed}-`, '');
   if (story.id.endsWith('--docs') || !component) {
