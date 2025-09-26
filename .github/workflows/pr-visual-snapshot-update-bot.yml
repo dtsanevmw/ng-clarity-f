@@ -80,9 +80,10 @@ jobs:
           echo "commit-sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
       - name: Comment
         if: ${{steps.diff.outputs.status == 'dirty'}}
-        uses: peter-evans/create-or-update-comment@v2
+        uses: peter-evans/create-or-update-comment@v3
         with:
-          issue-number: ${{steps.get-pr-event.outputs.pullRequestNumber}}
+          token: ${{ github.token }}
+          issue-number: ${{ github.event.workflow_run.pull_requests[0].number }}
           body: |
             This PR introduces visual changes: ${{steps.push-changes.outputs.commit-sha}}
             If these changes are intended and correct, please cherry-pick the above commit to this PR.
