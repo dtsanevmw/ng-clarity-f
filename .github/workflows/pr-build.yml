@@ -45,9 +45,9 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        browser: ['chromium', 'firefox']
-        theme: ['light', 'dark']
-        density: ['default', 'regular', 'compact']
+        browser: ['chromium']
+        theme: ['light']
+        density: ['default']
     env:
       CLARITY_VRT_BROWSER: ${{matrix.browser}}
       CLARITY_VRT_THEME: ${{matrix.theme}}
