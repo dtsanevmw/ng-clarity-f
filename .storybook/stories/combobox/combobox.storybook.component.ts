@@ -23,7 +23,7 @@ interface OptionGroup {
   imports: [CommonModule, FormsModule, ClrComboboxModule, ClrLoadingModule],
   template: `
     <clr-combobox-container>
-      <label [for]="id">{{ label }}</label>
+      <label [for]="id">{{ label }}asdasdasd</label>
       <clr-combobox
         [clrMulti]="clrMulti"
         [placeholder]="placeholder"
