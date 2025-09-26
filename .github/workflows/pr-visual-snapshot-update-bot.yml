@@ -44,7 +44,8 @@ jobs:
         with:
           pattern: visual-snapshot-changes-.+\.diff
           path: ${{runner.temp}}/artifacts/
-          run_id: ${{github.event.workflow_run.id}}
+          run-id: ${{github.event.workflow_run.id}}
+          github-token: ${{ github.token }}
       - name: Apply Changes
         id: apply-changes
         run: |
