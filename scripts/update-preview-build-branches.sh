@@ -53,5 +53,5 @@ bump_and_push () {
 }
 
 # --- run for both packages ---
-bump_and_push "preview-build-clr-angular" "refs/heads/preview-build/${GIT_BRANCH}/clr-angular"
 bump_and_push "preview-build-clr-ui" "refs/heads/preview-build/${GIT_BRANCH}/clr-ui"
+bump_and_push "preview-build-clr-angular" "refs/heads/preview-build/${GIT_BRANCH}/clr-angular"
